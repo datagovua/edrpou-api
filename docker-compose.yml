@@ -2,10 +2,6 @@ version: '2'
 services:
   edr:
     build: .
-    volumes:
-    - .:/src
-    - npm:/src/node_modules
-    command: sh -c 'npm install && sails lift'
     ports:
     - 81:80
     environment:
