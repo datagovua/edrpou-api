@@ -1,0 +1,14 @@
+{
+  "name": "edr-uploader",
+  "private": true,
+  "version": "0.0.0",
+  "description": "upload edr to sails app",
+  "keywords": [],
+  "dependencies": {
+    "csv-parse": "^1.0.4",
+    "iconv-lite": "^0.4.13",
+    "sails.io.js": "^0.13.6",
+    "socket.io-client": "^1.4.5",
+    "stream-transform": "^0.1.1"
+  }
+}

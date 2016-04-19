@@ -1,0 +1,29 @@
+version: '2'
+services:
+  edr:
+    build: .
+    volumes:
+    - .:/src
+    - npm:/src/node_modules
+    command: sh -c 'npm install && sails lift'
+    ports:
+    - 81:80
+    environment:
+      NODE_ENV: production
+      PORT: 80
+    depends_on:
+    - mongo
+  mongo:
+    image: mvertes/alpine-mongo
+  edr-uploader:
+    build: ./edr-uploader
+    command: sh -c 'npm install && node /src/script.js'
+    volumes:
+    - ./data:/data/
+    - ./edr-uploader:/src
+    depends_on:
+    - mongo
+volumes:
+  npm:
+  edrdata:
+
