@@ -1,4 +1,8 @@
 FROM node:4.4.3-slim
+RUN apk update \
+  && apk add git && \
+  && rm -rf /var/cache/apk/*
+
 
 COPY package.json /src/
 WORKDIR /src/
