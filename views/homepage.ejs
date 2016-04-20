@@ -12,63 +12,23 @@ setTimeout(function sunrise () {
 
 <div class="default-page">
   <div class="header">
-    <h1 id="main-title" class="container"><%= __('A brand new app.') %></h1>
-    <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
+    <h1 id="main-title" class="container"><%= __('API сервер "ЄДР"') %></h1>
+    <h3 class="container">Це сервер API-доступу до відкритих даних Єдиного державного реєстру юридичних осіб</h3>
   </div>
   <div class="main container clearfix">
-    <!-- <h1>Getting started</h1>
-    <p>Don't worry, we've got your back.</p> -->
     <ul class="getting-started">
       <li class="clearfix">
         <div class="step">
-          <div class="sprite one"></div>
-          <h3>Generate a REST API.</h3>
+          <h3>Приклад використання</h3>
           <p>
-            Run <code>sails generate api user</code>.  This will create two files: a <a href="http://sailsjs.org/#!/documentation/concepts/ORM/Models.html">model</a> <code class="pocket">api/models/User.js</code> and a <a href="http://sailsjs.org/#!/documentation/concepts/Controllers">controller</a><code class="pocket">api/controllers/UserController.js</code>.
+            <code>http://localhost:81/company?limit=5&skip=120000&sort=id&populate=id,name</code>
           </p>
-        </div>
-      </li>
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite two"></div>
-          <h3>
-            Lift your app.
-          </h3>
+          <h3>Сирцевий код</h3>
           <p>
-            Run <code>sails lift</code> to start up your app server.  If you visit <a target="_blank" href="http://localhost:<%= sails.config.port || 1337%>/user"><code>http://localhost:<%= sails.config.port || 1337%>/user</code></a> in your browser, you'll see a <a href="http://sailsjs.org/#!/documentation/reference/blueprint-api">WebSocket-compatible</a> user API.
+            Хочете запустити на власному сервері? Завітайте на <a href="https://github.com/datagovua/edrpou-api">GitHub-сторінку</a>.
           </p>
-        </div>
-      </li>
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite three"></div>
-          <h3>
-            Dive in.
-          </h3>
-          <p>Blueprints are just the beginning.  You'll probably also want to learn how to customize your app's <a href="http://sailsjs.org/#!/documentation/concepts/Routes">routes</a>, set up <a href="http://sailsjs.org/#!/documentation/concepts/Policies">security policies</a>, configure your <a href="http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html">data sources</a>, and build custom <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/Controllers?q=actions">controller actions</a>. For more help getting started, check out the links on this page.</p>
-
         </div>
       </li>
     </ul>
-    <div class="links">
-      <!-- <h3>Links</h3> -->
-      <ul class="link-list">
-
-        <h4>Docs</h4>
-        <a target="_blank" href="http://sailsjs.org/#!/documentation/anatomy/myApp"><li>App Structure</li></a>
-        <a target="_blank" href="http://sailsjs.org/#!/documentation/reference"><li>Reference</li></a>
-        <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/extending-sails/Adapters/adapterList.html"><li>Supported Databases</li></a>
-
-        <h4>Tutorials</h4>
-        <a target="_blank" href="https://github.com/sails101"><li>Sails 101</li></a>
-
-        <h4>Community</h4>
-        <a target="_blank" href="http://stackoverflow.com/search?q=sails.js"><li>StackOverFlow</li></a>
-        <a target="_blank" href="https://github.com/balderdashy/sails"><li>GitHub</li></a>
-        <a target="_blank" href="https://groups.google.com/forum/#!forum/sailsjs"><li>Google Group</li></a>
-        <a target="_blank" href="http://webchat.freenode.net/"><li>IRC (#sailsjs on freenode)</li></a>
-
-      </ul>
-    </div>
   </div>
 </div>
