@@ -1,6 +1,6 @@
 FROM node:4.4.3-slim
 RUN apk update \
-  && apk add git && \
+  && apk add git \
   && rm -rf /var/cache/apk/*
 
 
