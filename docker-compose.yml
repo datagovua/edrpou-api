@@ -12,14 +12,8 @@ services:
   mongo:
     image: mvertes/alpine-mongo
   edr-uploader:
-    build: ./edr-uploader
-    command: sh -c 'npm install && node /src/script.js'
+    build: ../edr-uploader
     volumes:
-    - ./data:/data/
-    - ./edr-uploader:/src
+    - ../edr-uploader/data:/data/
     depends_on:
     - mongo
-volumes:
-  npm:
-  edrdata:
-
