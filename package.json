@@ -22,7 +22,7 @@
     "rc": "1.0.1",
     "sails": "~0.12.3",
     "sails-mongo": "~0.12.0",
-    "sails-swagger": "^0.5.1"
+    "sails-swagger": "tjwebb/sails-swagger#f21248d118"
   },
   "scripts": {
     "debug": "node debug app.js",
