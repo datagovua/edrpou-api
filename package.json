@@ -22,7 +22,7 @@
     "rc": "1.0.1",
     "sails": "~0.12.3",
     "sails-mongo": "~0.12.0",
-    "sails-swagger": "tjwebb/sails-swagger#f21248d118"
+    "vanuan-sails-swagger": "0.5.1"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -31,8 +31,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/anonymous node/sails user/edr.git"
+    "url": "git://github.com/datagovua/edr.git"
   },
-  "author": "anonymous node/sails user",
-  "license": ""
+  "author": "datagovua",
+  "license": "MIT"
 }

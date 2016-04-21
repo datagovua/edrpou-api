@@ -5,15 +5,15 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 COPY package.json /src/
+ADD . /src/
 WORKDIR /src/
 RUN npm install -g sails
 RUN npm install
 
-ADD . /src/
 
 RUN npm install swagger-ui \
-  && mkdir /src/assets/docs \
-  && cp -r node_modules/swagger-ui/dist/* /src/assets/docs/ \
+  && mkdir ./assets/docs \
+  && cp -r ./node_modules/swagger-ui/dist/* ./assets/docs/
 
 EXPOSE 80
 CMD sh -c 'sails lift'
