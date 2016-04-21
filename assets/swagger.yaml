@@ -1,0 +1,80 @@
+swagger: '2.0'
+info:
+  title: ЄДР API
+  description: Реєстр юридичних осіб України
+  version: "0.0.0"
+host: edr.data-gov-ua.org
+schemes:
+  - http
+basePath: /
+produces:
+  - application/json
+paths:
+  /company:
+    get:
+      summary: Юридичні особи
+      description: Повертає інформацію про компанії, комунальні та державні підприємства, органи влади, громадські організації, політичні партії та інші юридичні особи України.
+      parameters:
+        - name: where
+          in: query
+          type: string
+          description: фільтрація
+          required: false
+          default: '{"officialName":{"contains":"комунальне"},"status":"зареєстровано","name":{"not":""}}'
+        - name: limit
+          in: query
+          default: 10
+          description: кількість записів, що виводиться (пагінація)
+          required: false
+          type: number
+          format: double
+        - name: skip
+          in: query
+          default: 0
+          description: стартовий номер запису (пагінація)
+          required: false
+          type: number
+          format: double
+        - name: sort
+          in: query
+          default: id
+          description: сортування
+          required: false
+          type: string
+          enum: [ "edrpou", "id", "name", "officialName", "mainPerson", "occupation", "status"]
+      responses:
+        200:
+          description: масив організацій
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Company'
+
+definitions:
+  Company:
+    type: object
+    properties:
+      id:
+        type: string
+        description: унікальний ідентифікатор
+      edrpou:
+        type: string
+        description: ЄДРПОУ, ідентифікатор юридичної особи у відповідному реєстрі Державної служби статистики України
+      officialName:
+        type: string
+        description: повна назва організації
+      name:
+        type: string
+        description: скорочена назва організації
+      address:
+        type: string
+        description: адреса реєстрації організації
+      mainPerson:
+        type: string
+        description: керівник організації
+      occupation:
+        type: string
+        description: основний вид діяльності організації
+      status:
+        type: string
+        description: стан організації
