@@ -1,8 +1,8 @@
 FROM node:4.4.3-slim
-RUN apk update \
-  && apk add git \
-  && rm -rf /var/cache/apk/*
 
+RUN apt-get update \
+  && apt-get install -y git --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/*
 
 COPY package.json /src/
 WORKDIR /src/
@@ -11,7 +11,5 @@ RUN npm install
 
 ADD . /src/
 
-#ENV PATH /src/node_modules/.bin:${PATH}
-#RUN ls /src/node_modules/.bin
 EXPOSE 80
 CMD sh -c 'sails lift'
