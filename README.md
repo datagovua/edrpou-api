@@ -31,10 +31,5 @@ mongo:
 
 ## Використання
 
-Приклад використання:
-
-```
-http://$SERVER/company?limit=5&skip=120000&sort=id&populate=id,name
-```
-
-Розширена документація: http://sailsjs.org/documentation/reference/blueprint-api/find-where
+Документація доступна за посиланням:
+http://edr.data-gov-ua.org/docs/
