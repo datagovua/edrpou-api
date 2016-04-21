@@ -11,5 +11,9 @@ RUN npm install
 
 ADD . /src/
 
+RUN npm install swagger-ui \
+  && mkdir /src/assets/docs \
+  && cp -r node_modules/swagger-ui/dist/* /src/assets/docs/ \
+
 EXPOSE 80
 CMD sh -c 'sails lift'
