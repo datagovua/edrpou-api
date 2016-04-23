@@ -17,3 +17,11 @@ services:
     - ../edr-uploader/data:/data/
     depends_on:
     - mongo
+
+  redis:
+    image: 'redis'
+    command: redis-server --appendonly yes
+    expose:
+      - '6379'
+    volumes:
+      - /data
