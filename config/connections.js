@@ -57,12 +57,18 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
   mongo: {
-     adapter: 'sails-mongo',
-     host: 'mongo',
-     port: 27017,
+    adapter: 'sails-mongo',
+    host: 'mongo',
+    port: 27017,
   //   user: 'username', //optional
   //   password: 'password', //optional
   //   database: 'your_mongo_db_name_here' //optional
+    poolSize: 5,
+    socketOptions: {
+        noDelay: true,
+        connectTimeoutMS: 0,
+        socketTimeoutMS: 0
+    }
   },
 
   /***************************************************************************
