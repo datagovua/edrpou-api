@@ -22,7 +22,8 @@
     "rc": "1.0.1",
     "sails": "~0.12.3",
     "sails-mongo": "~0.12.0",
-    "connect-redis": "~3.0.2"
+    "connect-redis": "~3.0.2",
+    "socket.io-redis": "~1.0.0"
   },
   "scripts": {
     "debug": "node debug app.js",
