@@ -21,7 +21,7 @@
     "include-all": "~0.1.6",
     "rc": "1.0.1",
     "sails": "~0.12.3",
-    "sails-mongo": "~0.12.0",
+    "sails-postgresql": "~0.12.1",
     "connect-redis": "~3.0.2",
     "socket.io-redis": "~1.0.0"
   },

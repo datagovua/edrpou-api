@@ -8,15 +8,19 @@ services:
       NODE_ENV: production
       PORT: 80
     depends_on:
-    - mongo
-  mongo:
-    image: mvertes/alpine-mongo
+    - postgres
+
+  postgres:
+    image: kiasaki/alpine-postgres:9.5
+
   edr-uploader:
-    build: ../edr-uploader
+    image: 'vanuan/edrpou-uploader:latest'
+#    build: ../edr-uploader
     volumes:
     - ../edr-uploader/data:/data/
     depends_on:
-    - mongo
+    - postgres
+    - edr
 
   redis:
     image: 'redis'

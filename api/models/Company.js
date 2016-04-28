@@ -9,6 +9,38 @@ module.exports = {
 
   attributes: {
 
+    name: {
+      type: 'string'
+    },
+
+    edrpou: {
+      type: 'string'
+    },
+
+    officialName: {
+      type: 'string'
+    },
+
+    name: {
+      type: 'string'
+    },
+
+    address: {
+      type: 'string',
+    },
+
+    mainPerson: {
+      type: 'string'
+    },
+
+    occupation: {
+      type: 'string'
+    },
+
+    status: {
+      type: 'string'
+    }
+
   }
 };
 

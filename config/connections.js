@@ -56,20 +56,20 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  mongo: {
-    adapter: 'sails-mongo',
-    host: 'mongo',
-    port: 27017,
+  //mongo: {
+  //  adapter: 'sails-mongo',
+  //  host: 'mongo',
+  //  port: 27017,
   //   user: 'username', //optional
   //   password: 'password', //optional
   //   database: 'your_mongo_db_name_here' //optional
-    poolSize: 5,
-    socketOptions: {
-        noDelay: true,
-        connectTimeoutMS: 0,
-        socketTimeoutMS: 0
-    }
-  },
+  //  poolSize: 5,
+  //  socketOptions: {
+  //      noDelay: true,
+  //      connectTimeoutMS: 0,
+  //      socketTimeoutMS: 0
+  //  }
+  //},
 
   /***************************************************************************
   *                                                                          *
@@ -80,13 +80,13 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  // somePostgresqlServer: {
-  //   adapter: 'sails-postgresql',
-  //   host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
-  //   user: 'YOUR_POSTGRES_USER', // optional
-  //   password: 'YOUR_POSTGRES_PASSWORD', // optional
-  //   database: 'YOUR_POSTGRES_DB' //optional
-  // }
+  postgres: {
+    adapter: 'sails-postgresql',
+    host: 'postgres',
+    user: 'postgres', // optional
+    //password: '', // optional
+    //database: 'sails' //optional
+  }
 
 
   /***************************************************************************
