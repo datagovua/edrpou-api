@@ -9,13 +9,14 @@ services:
       PORT: 80
     depends_on:
     - postgres
+    - edr-migrations
 
   postgres:
     image: kiasaki/alpine-postgres:9.5
 
   edr-uploader:
-    image: 'vanuan/edrpou-uploader:latest'
-#    build: ../edr-uploader
+#    image: 'vanuan/edrpou-uploader:latest'
+    build: ../edr-uploader
     volumes:
     - ../edr-uploader/data:/data/
     depends_on:
@@ -29,3 +30,10 @@ services:
       - '6379'
     volumes:
       - /data
+
+  edr-migrations:
+    #image: vanuan/edrpou-migrations
+    build: ../edr-migrations
+    command: sh -c '/wait-for-it.sh -t 100 postgres:5432 && npm install && knex migrate:latest'
+    depends_on:
+      - postgres
