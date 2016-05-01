@@ -1,0 +1,14 @@
+version: '2'
+services:
+  edr-api:
+    image: 'vanuan/edrpou-api:latest'
+    ports:
+    - 80:80
+
+  edr-uploader:
+    image: 'vanuan/edrpou-uploader:latest'
+    volumes:
+    - /root:/data/edr/
+
+  edr-migrations:
+    image: vanuan/edrpou-migrations:latest

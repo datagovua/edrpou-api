@@ -1,27 +1,29 @@
 version: '2'
 services:
-  edr:
+  edr-api:
     build: .
     ports:
     - 81:80
     environment:
       NODE_ENV: production
       PORT: 80
+      PG: edr-db
     depends_on:
-    - postgres
-    - edr-migrations
+    - edr-db
+    - redis
 
-  postgres:
+  edr-db:
     image: kiasaki/alpine-postgres:9.5
 
   edr-uploader:
-#    image: 'vanuan/edrpou-uploader:latest'
     build: ../edr-uploader
     volumes:
-    - ../edr-uploader/data:/data/
+    - ./data:/data/edr/
     depends_on:
-    - postgres
-    - edr
+    - edr-db
+    - edr-migrations
+    environment:
+      PG_CONNECTION_STRING: postgres://postgres@edr-db/postgres
 
   redis:
     image: 'redis'
@@ -32,8 +34,9 @@ services:
       - /data
 
   edr-migrations:
-    #image: vanuan/edrpou-migrations
     build: ../edr-migrations
-    command: sh -c '/wait-for-it.sh -t 100 postgres:5432 && npm install && knex migrate:latest'
+    command: sh -c '/wait-for-it.sh -t 100 edr-db:5432 && npm install && knex migrate:latest'
     depends_on:
-      - postgres
+      - edr-db
+    environment:
+      PG_CONNECTION_STRING: postgres://postgres@edr-db/postgres
