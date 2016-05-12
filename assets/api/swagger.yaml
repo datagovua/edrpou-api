@@ -20,7 +20,7 @@ paths:
           type: string
           description: фільтрація
           required: false
-          default: '{"officialName":{"contains":"комунальне"},"status":"зареєстровано","name":{"not":""}}'
+          default: '{"officialName":{"contains":"комунальне"}}'
         - name: limit
           in: query
           default: 10
