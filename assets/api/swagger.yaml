@@ -6,7 +6,7 @@ info:
 host: edr.data-gov-ua.org
 schemes:
   - http
-basePath: /
+basePath: /api
 produces:
   - application/json
 paths:

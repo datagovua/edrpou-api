@@ -4,6 +4,7 @@ services:
     build: .
     ports:
     - 81:80
+    command: sh -c '/wait-for-it.sh -t 100 edr-db:5432 && sails lift'
     environment:
       NODE_ENV: production
       PORT: 80
